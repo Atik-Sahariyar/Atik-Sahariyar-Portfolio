@@ -33,9 +33,8 @@ const Project = () => {
       frontEndCode: "https://github.com/Atik-Sahariyar/online-course-client",
       backEndCode: "https://github.com/Atik-Sahariyar/online-course-server ",
       image: "https://i.ibb.co/wLZNYrH/disillusioned-rabbit-surge-sh-2.png",
-      technologies: ["React" , "Node.js", "Express", "Firebase", "Tailwind CSS" , "Stripe"], // Update with used technologies
+      technologies: ["React" , "Node.js", "Express", "Firebase", "Tailwind CSS" , "Stripe"], 
     },
-    // Add other project details with technologies
   ];
 
   return (

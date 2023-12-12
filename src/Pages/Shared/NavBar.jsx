@@ -1,34 +1,58 @@
-import { Link } from "react-router-dom";
 import { useTheme } from "../../Hooks/useTheme";
 import { FaDownload, FaMoon, FaSun } from "react-icons/fa";
+import resumePDF from "../../../public/Atik_Sahariyar.resume.pdf"
+import { Link } from "react-scroll";
 
 function NavBar() {
   const { darkMode, toggleTheme } = useTheme();
 
+
+  const handleDownload = () => {
+    fetch(resumePDF)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "Atik_Sahariyar.resume.pdf");
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      })
+      .catch((error) => {
+        console.error("Error downloading the file: ", error);
+
+      });
+  };
+
+
   const navLinks = (
     <>
-      <Link to="/">
-        <li className=" mx-2 text-xl">Home</li>
+       <Link to="home" smooth={true} duration={500}>
+        <li className="mx-2 text-xl cursor-pointer">Home</li>
       </Link>
-
-      <a href="#about" className="mx-2 text-xl">
-        
-      </a>
-      <a href="#skills" className="mx-2 text-xl">
-        Skills
-      </a>
-      <a href="#projects" className="mx-2 text-xl">
-        Projects
-      </a>
-      <a href="#contact" className="mx-2 text-xl">
-        Contact
-      </a>
-      <button className=" block md:hidden btn btn-sm mx-3">
+      <Link to="about" smooth={true} duration={500}>
+        <li className="mx-2 text-xl cursor-pointer">About</li>
+      </Link>
+      <Link to="skills" smooth={true} duration={500}>
+        <li className="mx-2 text-xl cursor-pointer">Skills</li>
+      </Link>
+      <Link to="projects" smooth={true} duration={500}>
+        <li className="mx-2 text-xl cursor-pointer">Projects</li>
+      </Link>
+      <Link to="contact" smooth={true} duration={500}>
+        <li className="mx-2 text-xl cursor-pointer">Contact</li>
+      </Link>
+      <button 
+      onClick={handleDownload}
+      className={` text-white md:hidden btn btn-sm mx-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-800 ` }
+      >
         {" "}
         <FaDownload></FaDownload> Resume
       </button>
     </>
   );
+
 
   return (
     <div
@@ -58,7 +82,7 @@ function NavBar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] flex gap-2  p-2 shadow bg-base-100 rounded-box w-52"
+            className={`menu menu-sm dropdown-content mt-3 z-[1] flex gap-2  p-2 shadow bg-base-100 rounded-box w-52 ${darkMode ? ' bg-gray-800' : ''}`}
           >
             {navLinks}
           </ul>
@@ -71,13 +95,16 @@ function NavBar() {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end ">
-        <button className=" hidden text-white md:block btn btn-sm mx-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-800">
+        <button
+         onClick={handleDownload} 
+         className={` text-white  hidden md:block btn btn-sm mx-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-800` }
+        >
           {" "}
           <span className=" flex gap-2 ">
             <FaDownload></FaDownload> Resume
           </span>
         </button>
-        <button onClick={toggleTheme} className="  btn btn-sm ">
+        <button onClick={toggleTheme} className={`btn btn-sm   ${darkMode ? 'bg-gray-700 text-white border-blue-500' : ''}`}>
           {" "}
           {darkMode ? (
             <FaSun className=" text-xl" />
