@@ -5,7 +5,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 const About = () => {
   const { darkMode } = useTheme();
   return (
-    <div className=" my-8">
+    <div id ="about" className=" my-5">
       <h2 className=" text-center text-4xl font-bold">About Me</h2>
 
       <div className=" flex flex-col md:flex-row items-center justify-center">
@@ -14,26 +14,27 @@ const About = () => {
             <img
               src={profilePicture}
               alt="Profile"
-              className="w-32 h-32 md:w-40 md:h-40 border border-blue-500 rounded-tl-2xl rounded-br-2xl mb-4"
+              className="w-64 h-64 md:w-48 md:h-48 border border-blue-500 rounded-tl-2xl rounded-br-2xl mb-4"
             />
           </span>
           <h2 className="text-2xl font-bold mb-2">Atik Sahariyar</h2>
           <p className={darkMode ? "text-gray-200" : "text-gray-600"}>
-            Web Developer
+           Jr. Web Developer
           </p>
-          <p
+         
+        </div>
+          
+        {/* Social Links */}
+        <div className=" md:flex-1  justify-center md:justify-start gap-4">
+        <p
             className={
-              darkMode
-                ? "mt-4 text-lg text-gray-300"
-                : "mt-4 text-lg text-gray-700"
+            `${  darkMode
+              ? "mt-4 text-lg text-gray-300"
+              : "mt-4 text-lg text-gray-700"} mb-5`
             }
           >
-            {`I'm a passionate web developer with a focus on front-end technologies. I love creating beautiful and user-friendly interfaces using modern frameworks.`}
+            {`Hi, I'm Atik Sahariyar, a Jr. Web Developer from Dhaka, Bangladesh. I specialize in JavaScript, React.js, and Node.js. With a focus on creating seamless digital experiences, I've contributed to many projects. Currently pursuing BSC in Computer Science and Engineering, I'm passionate about continual learning. Let's connect for exciting opportunities!`}
           </p>
-        </div>
-
-        {/* Social Links */}
-        <div className="mt-6  md:flex-1 items-center justify-center md:justify-start gap-4">
           {/* GitHub */}
           <a
             href="https://github.com/Atik-Sahariyar"

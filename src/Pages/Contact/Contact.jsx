@@ -1,6 +1,7 @@
 import { useTheme } from "../../Hooks/useTheme";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { FaLocationArrow, FaPhone, FaTextWidth } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const Contact = () => {
@@ -34,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <div
+    <div id ="contact"
       className={`mt-8 ${
         darkMode ? "bg-gray-800 text-gray-100 " : "bg-gray-100 text-gray-900"
       }`}
@@ -44,6 +45,28 @@ const Contact = () => {
         <div className=" flex-1 md:my-20 mx-5 md:mx-8">
           <p className=" mb-4">{`Feel free to drop me a message, and I'll get back to you as soon as possible!`}</p>
           <p className=" mb-4">{`As a web developer, I'm excited to hear from you and discuss any inquiries or collaboration opportunities!`}</p>
+           
+           <span className=" flex items-center gap-4">
+            <FaPhone/>
+            <span>
+               <p>WhatsApp</p>
+               <p>+8801797386519</p>
+            </span>
+           </span>
+           <span className=" flex items-center gap-4 my-4">
+            <FaTextWidth/>
+            <span>
+               <p>Email</p>
+               <p>atiksahariyar88@gmail.com</p>
+            </span>
+           </span>
+           <span className=" flex items-center gap-4">
+            <FaLocationArrow/>
+            <span>
+               <p>Address</p>
+               <p>Uttara, Dhaka - 1230, Bangladesh</p>
+            </span>
+           </span>
         </div>
         <div className=" flex-1 ">
           <form

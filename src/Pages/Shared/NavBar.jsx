@@ -1,11 +1,12 @@
 import { useTheme } from "../../Hooks/useTheme";
 import { FaDownload, FaMoon, FaSun } from "react-icons/fa";
-import resumePDF from "../../../public/Atik_Sahariyar.resume.pdf"
+import resumePDF from "../../../public/Atik_Sahariyar.resume.pdf";
 import { Link } from "react-scroll";
+import { useState } from "react";
 
 function NavBar() {
+  const [active, setActive] = useState("home");
   const { darkMode, toggleTheme } = useTheme();
-
 
   const handleDownload = () => {
     fetch(resumePDF)
@@ -21,46 +22,40 @@ function NavBar() {
       })
       .catch((error) => {
         console.error("Error downloading the file: ", error);
-
       });
   };
 
-
-  const navLinks = (
-    <>
-       <Link to="home" smooth={true} duration={500}>
-        <li className="mx-2 text-xl cursor-pointer">Home</li>
-      </Link>
-      <Link to="about" smooth={true} duration={500}>
-        <li className="mx-2 text-xl cursor-pointer">About</li>
-      </Link>
-      <Link to="skills" smooth={true} duration={500}>
-        <li className="mx-2 text-xl cursor-pointer">Skills</li>
-      </Link>
-      <Link to="projects" smooth={true} duration={500}>
-        <li className="mx-2 text-xl cursor-pointer">Projects</li>
-      </Link>
-      <Link to="contact" smooth={true} duration={500}>
-        <li className="mx-2 text-xl cursor-pointer">Contact</li>
-      </Link>
-      <button 
-      onClick={handleDownload}
-      className={` text-white md:hidden btn btn-sm mx-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-800 ` }
-      >
-        {" "}
-        <FaDownload></FaDownload> Resume
-      </button>
-    </>
-  );
-
+  const navLinks = [
+    {
+      id: "home",
+      title: "Home",
+    },
+    {
+      id: "about",
+      title: "About",
+    },
+    {
+      id: "skills",
+      title: "Skills",
+    },
+    {
+      id: "project",
+      title: "Project",
+    },
+    {
+      id: "contact",
+      title: "Contact",
+    },
+  ];
 
   return (
     <div
-      className={
+      className={`${
         darkMode
           ? "navbar bg-gray-900 text-white"
           : "navbar bg-white text-gray-900"
       }
+          sticky top-0 z-50 `}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -82,9 +77,27 @@ function NavBar() {
           </div>
           <ul
             tabIndex={0}
-            className={`menu menu-sm dropdown-content mt-3 z-[1] flex gap-2  p-2 shadow bg-base-100 rounded-box w-52 ${darkMode ? ' bg-gray-800' : ''}`}
+            className={`menu menu-sm dropdown-content mt-3 z-[1] flex gap-2  p-2 shadow bg-base-100 rounded-box w-52 ${
+              darkMode ? " bg-gray-800" : ""
+            }`}
           >
-            {navLinks}
+            {navLinks.map((nav) => (
+              <li key={nav.id}>
+                <Link
+                  to={nav.id}
+                  activeClass="text-gray-300"
+                  smooth={true}
+                  spy={true}
+                  duration={100}
+                  className={` hover:text-gray-300 text-[18px] font-medium cursor-pointer ${
+                    darkMode ? " text-white" : "text-gray-900"
+                  }`}
+                  onClick={() => setActive(nav.id)}
+                >
+                  {nav.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl md:text-3xl font-bold">
@@ -92,19 +105,42 @@ function NavBar() {
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+        <ul className="menu menu-horizontal px-1">
+          {navLinks.map((nav) => (
+            <li key={nav.id}>
+              <Link
+                to={nav.id}
+                activeClass="text-white"
+                smooth={true}
+                spy={true}
+                duration={100}
+                className={` hover:text-white text-[18px] font-medium cursor-pointer ${
+                  darkMode ? " text-gray-200" : "text-gray-900"
+                }`}
+                onClick={() => setActive(nav.id)}
+              >
+                {nav.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="navbar-end ">
+      <div className="navbar-end">
         <button
-         onClick={handleDownload} 
-         className={` text-white  hidden md:block btn btn-sm mx-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-800` }
+          onClick={handleDownload}
+          className={` text-white  hidden md:block btn btn-sm mx-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-800`}
         >
           {" "}
           <span className=" flex gap-2 ">
             <FaDownload></FaDownload> Resume
           </span>
         </button>
-        <button onClick={toggleTheme} className={`btn btn-sm   ${darkMode ? 'bg-gray-700 text-white border-blue-500' : ''}`}>
+        <button
+          onClick={toggleTheme}
+          className={`btn btn-sm   ${
+            darkMode ? "bg-gray-700 text-white border-blue-500" : ""
+          }`}
+        >
           {" "}
           {darkMode ? (
             <FaSun className=" text-xl" />

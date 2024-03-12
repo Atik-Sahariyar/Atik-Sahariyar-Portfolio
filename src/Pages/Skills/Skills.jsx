@@ -19,10 +19,10 @@ const Skills = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div id ="skills" className=" flex flex-col items-center justify-center">
       <h2 className="text-center text-4xl font-bold">Skills</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
         {skillsList.map((skill, index) => (
           <div
             key={index}

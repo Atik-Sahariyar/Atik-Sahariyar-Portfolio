@@ -6,6 +6,16 @@ const Project = () => {
 
   const projectsList = [
     {
+      title: "Boi-Binimoy",
+      description:
+        "Book exchange & buy-sell platform. This is my team project",
+      liveLink: "https://boibinimoy.netlify.app/",
+      frontEndCode: "https://github.com/ShahreyarRafi/BoiBinimoy",
+      backEndCode: "https://github.com/ShahreyarRafi/BoiBinimoy-Server",
+      image: "https://i.ibb.co/2N6vvvS/boibinimoy-netlify-app-3.png",
+      technologies: ["Next.js", "Tailwind CSS", "Redux", "Node.js", "Express", "Firebase",  "MongoDB", "Mongoose", "SSLCommerz"], 
+    },
+    {
       title: "FriendFusion",
       description:
         "A social networking platform built using React and Node.js/Express.",
@@ -15,16 +25,16 @@ const Project = () => {
       image: "https://i.ibb.co/9pVVSmP/glossy-anger-surge-sh-1.png",
       technologies: ["React" , "Node.js", "Express", "Firebase", "Tailwind CSS", "MongoDB"], 
     },
-    {
-      title: "Online Grope Study",
-      description:
-        "Interactive React-based study platform for seamless group sessions and resource access.",
-      liveLink: "https://dist-nine-navy.vercel.app/",
-      frontEndCode: "https://github.com/Atik-Sahariyar/online-group-study-client-side",
-      backEndCode: "https://github.com/Atik-Sahariyar/online-group-study-server",
-      image: "https://i.ibb.co/d4yZfHZ/dist-nine-navy-vercel-app.png",
-      technologies: ["React" , "Node.js", "Express", "Firebase", "Tailwind CSS", "MongoDB"], 
-    },
+    // {
+    //   title: "Online Grope Study",
+    //   description:
+    //     "Interactive React-based study platform for seamless group sessions and resource access.",
+    //   liveLink: "https://dist-nine-navy.vercel.app/",
+    //   frontEndCode: "https://github.com/Atik-Sahariyar/online-group-study-client-side",
+    //   backEndCode: "https://github.com/Atik-Sahariyar/online-group-study-server",
+    //   image: "https://i.ibb.co/d4yZfHZ/dist-nine-navy-vercel-app.png",
+    //   technologies: ["React" , "Node.js", "Express", "Firebase", "Tailwind CSS", "MongoDB"], 
+    // },
     {
       title: " Online Course Management",
       description:
@@ -38,7 +48,7 @@ const Project = () => {
   ];
 
   return (
-    <div
+    <div id ="projects"
       className={`  p-8 ${
         darkMode ? "text-white bg-gray-900" :  "bg-gray-100 text-gray-900"
       }`}
