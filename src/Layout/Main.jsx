@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../Pages/Shared/NavBar";
-import { useTheme } from "../Hooks/useTheme";
+import NavBar from "../Pages/Shared/NavBar.jsx";
+import { useTheme } from "../Hooks/useTheme.jsx";
 
 const Main = () => {
   const { darkMode } = useTheme();

@@ -1,4 +1,4 @@
-import { useTheme } from "../../Hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme.jsx";
 
 function Banner() {
     const { darkMode } = useTheme()

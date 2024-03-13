@@ -1,4 +1,4 @@
-import { useTheme } from "../../Hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme.jsx";
 import { FaDownload, FaMoon, FaSun } from "react-icons/fa";
 import resumePDF from "../../../public/Atik_Sahariyar.resume.pdf";
 import { Link } from "react-scroll";
@@ -8,6 +8,7 @@ function NavBar() {
   const [active, setActive] = useState("home");
   const { darkMode, toggleTheme } = useTheme();
 
+  console.log(active);
   const handleDownload = () => {
     fetch(resumePDF)
       .then((res) => res.blob())
@@ -91,7 +92,7 @@ function NavBar() {
                   duration={100}
                   className={` hover:text-gray-300 text-[18px] font-medium cursor-pointer ${
                     darkMode ? " text-white" : "text-gray-900"
-                  }`}
+                  } `}
                   onClick={() => setActive(nav.id)}
                 >
                   {nav.title}
@@ -116,7 +117,7 @@ function NavBar() {
                 duration={100}
                 className={` hover:text-white text-[18px] font-medium cursor-pointer ${
                   darkMode ? " text-gray-200" : "text-gray-900"
-                }`}
+                } `}
                 onClick={() => setActive(nav.id)}
               >
                 {nav.title}

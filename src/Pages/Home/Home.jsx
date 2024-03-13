@@ -1,18 +1,18 @@
-import About from "../About/About";
-import Contact from "../Contact/Contact";
-import Footer from "../Footer/Footer";
-import Projects from "../Projects/Projects";
-import Skills from "../Skills/Skills";
-import Banner from "./Banner";
+import About from "../About/About.jsx";
+import Contact from "../Contact/Contact.jsx";
+import Footer from "../Footer/Footer.jsx";
+import Projects from "../Projects/Projects.jsx";
+import Skills from "../Skills/Skills.jsx";
+import Banner from "./Banner.jsx";
 
 const Home = () => {
     return (
         <div id="home">
             <Banner></Banner>
-            <About id ="about"></About>
-            <Skills id ="skills"></Skills>
-            <Projects id ="projects"></Projects>
-            <Contact id ="contact"></Contact>
+            <About ></About>
+            <Skills ></Skills>
+            <Projects ></Projects>
+            <Contact ></Contact>
             <Footer />
         </div>
     );

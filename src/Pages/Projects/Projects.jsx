@@ -1,5 +1,5 @@
 import {  FaGithub, FaInternetExplorer } from "react-icons/fa";
-import { useTheme } from "../../Hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme.jsx";
 
 const Project = () => {
   const { darkMode } = useTheme();

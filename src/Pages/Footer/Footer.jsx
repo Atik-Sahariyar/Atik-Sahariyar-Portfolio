@@ -1,5 +1,5 @@
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
-import { useTheme } from "../../Hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme.jsx";
 
 const Footer = () => {
   const { darkMode } = useTheme();
