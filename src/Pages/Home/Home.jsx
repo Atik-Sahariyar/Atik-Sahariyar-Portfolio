@@ -1,9 +1,9 @@
-import About from "../About/About.jsx";
-import Contact from "../Contact/Contact.jsx";
-import Footer from "../Footer/Footer.jsx";
-import Projects from "../Projects/Projects.jsx";
-import Skills from "../Skills/Skills.jsx";
-import Banner from "./Banner.jsx";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
+import Projects from "../Projects/Projects";
+import Skills from "../Skills/Skills";
+import Banner from "./Banner";
 
 const Home = () => {
     return (

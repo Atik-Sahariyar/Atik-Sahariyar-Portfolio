@@ -1,4 +1,4 @@
-import { useTheme } from "../../Hooks/useTheme.jsx";
+import { useTheme } from "../../Hooks/useTheme";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { FaLocationArrow, FaPhone, FaTextWidth } from "react-icons/fa";

@@ -1,4 +1,4 @@
-import { useTheme } from "../../Hooks/useTheme.jsx";
+import { useTheme } from "../../Hooks/useTheme";
 import { FaDownload, FaMoon, FaSun } from "react-icons/fa";
 import resumePDF from "../../../public/Atik_Sahariyar.resume.pdf";
 import { Link } from "react-scroll";

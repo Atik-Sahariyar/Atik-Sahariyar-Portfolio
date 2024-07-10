@@ -1,4 +1,4 @@
-import { useTheme } from "../../Hooks/useTheme.jsx";
+import { useTheme } from "../../Hooks/useTheme";
 import profilePicture from "../../assets/Atik.png";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
